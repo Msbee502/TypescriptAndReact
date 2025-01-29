@@ -4,12 +4,17 @@ import './App.css'
 import backGround from './assets/ME-background-img.jpeg';
 import ScrollButton from "./components/topbutton.tsx"
 
+interface Character {
+  name: string;
+  url: string;
+}
+
 function App() {
 
-  const [search, setSearch] = useState("");
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
+  const [search, setSearch] = useState<string>("");
+  const [data, setData] = useState<Character[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>();
 
   useEffect (() => {
     const headers = {
